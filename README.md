@@ -1,5 +1,10 @@
 # 📦 Gestão de Estoque para Mini Mercados
 
+FRONT-END: 
+```bash
+https://github.com/DevAlberissi/Inventory_Managment-FrontEnd
+```
+
 ## 👥 Integrantes
 - Anderson Alberissi 2403321
 - Jullya Nigro 2402577
