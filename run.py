@@ -14,15 +14,9 @@ def create_app():
     CORS(app)
 
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
-    app.config["TWILIO_ACCOUNT_SID"] = os.getenv("TWILIO_ACCOUNT_SID")
-    app.config["TWILIO_AUTH_TOKEN"] = os.getenv("TWILIO_AUTH_TOKEN")
-    app.config["TWILIO_WHATSAPP_NUMBER"] = os.getenv("TWILIO_WHATSAPP_NUMBER")
 
     required_vars = [
-        "SECRET_KEY",
-        "TWILIO_ACCOUNT_SID",
-        "TWILIO_AUTH_TOKEN",
-        "TWILIO_WHATSAPP_NUMBER",
+        "SECRET_KEY"
     ]
     
     missing_vars = [var for var in required_vars if not app.config.get(var)]

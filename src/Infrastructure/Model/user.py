@@ -7,9 +7,7 @@ class User(db.Model):
     password = db.Column(db.String(250), nullable=False)
     cnpj = db.Column(db.String(14), unique=True, nullable=False)
     celular = db.Column(db.String(11), unique=True, nullable=False)
-    status = db.Column(db.Boolean, default=False, nullable=False)
-
-    activation_code = db.Column(db.String(4))
+    status = db.Column(db.Boolean, default=True, nullable=False)
 
     def to_dict(self):
         return {

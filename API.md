@@ -39,7 +39,7 @@ Autentica um usuário e retorna um JWT.
 ## Usuários
 
 ### POST /users
-Registra um novo seller. Envia código de ativação via WhatsApp.
+Registra um novo seller já ativo.
 
 **Body (JSON)**
 | Campo | Tipo | Obrigatório |
@@ -53,7 +53,7 @@ Registra um novo seller. Envia código de ativação via WhatsApp.
 **Resposta 201**
 ```json
 {
-  "mensagem": "Seller cadastrado. Código enviado no WhatsApp",
+  "mensagem": "Seller cadastrado e ativado com sucesso",
   "usuarios": { ...user }
 }
 ```
@@ -62,29 +62,6 @@ Registra um novo seller. Envia código de ativação via WhatsApp.
 | Status | Descrição |
 |--------|-----------|
 | 400 | Campos obrigatórios ausentes |
-
----
-
-### PATCH /users/activate
-Ativa a conta do usuário usando o código recebido via WhatsApp.
-
-**Body (JSON)**
-| Campo | Tipo | Obrigatório |
-|-------|------|-------------|
-| email | string | sim |
-| code | string | sim |
-
-**Resposta 200**
-```json
-{
-  "mensagem": "Conta ativada com sucesso"
-}
-```
-
-**Erros**
-| Status | Descrição |
-|--------|-----------|
-| 400 | Dados inválidos ou código incorreto |
 
 ---
 

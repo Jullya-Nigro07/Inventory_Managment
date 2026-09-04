@@ -17,27 +17,10 @@ class UserController:
         user = UserService.create_user(name, email, cnpj, celular, password)
 
         return make_response(jsonify({
-            "mensagem": "Seller cadastrado. Código enviado no WhatsApp",
+            "mensagem": "Seller cadastrado e ativado com sucesso",
             "usuarios": user.to_dict()
         }), 201)
 
-    @staticmethod
-    def activate_user():
-        data = request.get_json()
-        email = data.get("email")
-        code = data.get("code")
-
-        if not email or not code:
-            return make_response(jsonify({"erro": "Dados inválidos"}), 400)
-
-        activated = UserService.activate_user(email, code)
-
-        if not activated:
-            return make_response(jsonify({"erro": "Código inválido"}), 400)
-
-        return make_response(jsonify({
-            "mensagem": "Conta ativada com sucesso"
-        }), 200)
 
     @staticmethod
     def login_user():

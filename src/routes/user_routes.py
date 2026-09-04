@@ -8,10 +8,6 @@ user_bp = Blueprint('users', __name__, url_prefix='/users')
 def register_user():
     return UserController.register_user()
 
-@user_bp.route('/activate', methods=['PATCH'])
-def activate_user():
-    return UserController.activate_user()
-
 @user_bp.route('/me', methods=['GET'])
 @jwt_required()
 def get_me():

@@ -25,12 +25,9 @@ Os mini mercados devem se cadastrar informando os seguintes campos:
 - **E-mail**
 - **Celular**
 - **Senha**
-- **Status** (Padrão: Inativo)
+- **Status** (Padrão: Ativo)
 
-#### 🔹 Fluxo de Ativação do Seller:
-1. Após o cadastro, um código de 4 dígitos é enviado via **WhatsApp (Twilio)** para o seller.
-2. O seller deve inserir o código recebido para ativar sua conta.
-3. Somente sellers ativados podem fazer login e gerenciar produtos.
+Após o cadastro, o seller já pode fazer login e gerenciar produtos.
 
 ---
 
@@ -76,24 +73,18 @@ Um seller autenticado pode:
 
 ## 📡 Endpoints da API
 
-### 1️⃣ Cadastro e Ativação do Seller
+### 1️⃣ Cadastro do Seller
 - **Criar Seller**
   ```bash
-  curl -X POST "http://localhost:8080/api/sellers" \
+  curl -X POST "http://localhost:5000/users" \
        -H "Content-Type: application/json" \
-       -d '{"nome": "Mini Mercado X", "cnpj": "00.000.000/0001-00", "email": "mercado@email.com", "celular": "+559999999999", "senha": "123456"}'
-  ```
-- **Ativar Seller via WhatsApp (Twilio)**
-  ```bash
-  curl -X POST "http://localhost:8080/api/sellers/activate" \
-       -H "Content-Type: application/json" \
-       -d '{"celular": "+559999999999", "codigo": "1234"}'
+       -d '{"name": "Mini Mercado X", "cnpj": "00.000.000/0001-00", "email": "mercado@email.com", "celular": "99999999999", "password": "123456"}'
   ```
 
 ### 2️⃣ Autenticação
 - **Login**
   ```bash
-  curl -X POST "http://localhost:8080/api/auth/login" \
+  curl -X POST "http://localhost:5000/auth/login" \
        -H "Content-Type: application/json" \
        -d '{"email": "mercado@email.com", "senha": "123456"}'
   ```
@@ -101,38 +92,38 @@ Um seller autenticado pode:
 ### 3️⃣ Gerenciamento de Produtos
 - **Cadastrar Produto**
   ```bash
-  curl -X POST "http://localhost:8080/api/products" \
+  curl -X POST "http://localhost:5000/products" \
        -H "Authorization: Bearer SEU_TOKEN" \
        -H "Content-Type: application/json" \
        -d '{"nome": "Arroz", "preco": 10.50, "quantidade": 100, "status": "Ativo", "img": "url_da_imagem"}'
   ```
 - **Listar Produtos**
   ```bash
-  curl -X GET "http://localhost:8080/api/products" \
+  curl -X GET "http://localhost:5000/products" \
        -H "Authorization: Bearer SEU_TOKEN"
   ```
 - **Editar Produto**
   ```bash
-  curl -X PUT "http://localhost:8080/api/products/1" \
+  curl -X PATCH "http://localhost:5000/products/1" \
        -H "Authorization: Bearer SEU_TOKEN" \
        -H "Content-Type: application/json" \
        -d '{"nome": "Arroz Integral", "preco": 12.00, "quantidade": 50, "status": "Ativo"}'
   ```
 - **Ver Detalhes de um Produto**
   ```bash
-  curl -X GET "http://localhost:8080/api/products/1" \
+  curl -X GET "http://localhost:5000/products/1" \
        -H "Authorization: Bearer SEU_TOKEN"
   ```
 - **Inativar Produto**
   ```bash
-  curl -X PATCH "http://localhost:8080/api/products/1/inactivate" \
+  curl -X PATCH "http://localhost:5000/products/1/deactivate" \
        -H "Authorization: Bearer SEU_TOKEN"
   ```
 
 ### 4️⃣ Realizar Venda
 - **Criar Venda**
   ```bash
-  curl -X POST "http://localhost:8080/api/sales" \
+  curl -X POST "http://localhost:5000/vendas" \
        -H "Authorization: Bearer SEU_TOKEN" \
        -H "Content-Type: application/json" \
        -d '{"produtoId": 1, "quantidade": 2}'
@@ -145,7 +136,6 @@ Um seller autenticado pode:
 - **Front-end:** React.js
 - **Banco de Dados:** MySQL ou PostgreSQL
 - **Autenticação:** JWT ou OAuth
-- **Mensageria:** Twilio (para envio do código de ativação no WhatsApp)
 
 ---
 
