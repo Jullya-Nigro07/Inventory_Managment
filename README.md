@@ -1,12 +1,11 @@
-# 📦 Gestão de Estoque para Mini Mercados
+# 📦 Gestão de Estoque para - Nuvem Olfativa
 
 FRONT-END: 
 ```bash
-https://github.com/DevAlberissi/Inventory_Managment-FrontEnd
+https://github.com/Jullya-Nigro07/nuvem-olfativa-front-end.git
 ```
 
 ## 👥 Integrantes
-- Anderson Alberissi 2403321
 - Jullya Nigro 2402577
 - Melissa Moura 2403008
 - Humberto Lisboa 2402662
@@ -18,14 +17,14 @@ Desenvolver um sistema para gestão de estoque e vendas de mini mercados, garant
 
 ## 🚀 Funcionalidades Principais
 
-### 1️⃣ Cadastro de Mini Mercado (Seller)
+### 1️⃣ Cadastro do Seller
 Os mini mercados devem se cadastrar informando os seguintes campos:
 - **Nome**
 - **CNPJ**
 - **E-mail**
 - **Celular**
 - **Senha**
-- **Status** (Padrão: Inativo)
+- **Status** (Padrão: Ativo)
 
 #### 🔹 Fluxo de Ativação do Seller:
 1. Após o cadastro, um código de 4 dígitos é enviado via **WhatsApp (Twilio)** para o seller.
