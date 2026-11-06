@@ -1,12 +1,11 @@
-# 📦 Gestão de Estoque para Mini Mercados
+# 📦 Gestão de Estoque para Nuvem Olfativa
 
 FRONT-END: 
 ```bash
-https://github.com/DevAlberissi/Inventory_Managment-FrontEnd
+https://github.com/Jullya-Nigro07inventory-managment-front.git
 ```
 
 ## 👥 Integrantes
-- Anderson Alberissi 2403321
 - Jullya Nigro 2402577
 - Melissa Moura 2403008
 - Humberto Lisboa 2402662
