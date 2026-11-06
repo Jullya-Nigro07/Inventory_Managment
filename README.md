@@ -2,7 +2,7 @@
 
 FRONT-END: 
 ```bash
-https://github.com/Jullya-Nigro07inventory-managment-front.git
+https://github.com/Jullya-Nigro07/inventory-managment-front.git
 ```
 
 ## 👥 Integrantes
