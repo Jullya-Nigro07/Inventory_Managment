@@ -2,7 +2,7 @@
 
 FRONT-END: 
 ```bash
-https://github.com/Jullya-Nigro07/nuvem-olfativa-front-end.git
+https://github.com/Jullya-Nigro07inventory-managment-front.git
 ```
 
 ## 👥 Integrantes
