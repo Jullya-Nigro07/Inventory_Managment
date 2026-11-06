@@ -1,6 +1,7 @@
 from flask import request, jsonify, make_response
 from src.Application.Service.product_service import ProductService
 
+
 class ProductController:
     @staticmethod
     def create_product(seller_id):

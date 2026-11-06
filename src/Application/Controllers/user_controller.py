@@ -1,6 +1,7 @@
 from flask import request, jsonify, make_response
 from src.Application.Service.user_service import UserService
 
+
 class UserController:
     @staticmethod
     def register_user():
@@ -78,4 +79,5 @@ class UserController:
             }), 200)
         else:
            return make_response(jsonify({"erro": "Usuário não encontrado"}), 404)
-        
+
+   

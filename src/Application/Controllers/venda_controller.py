@@ -1,6 +1,7 @@
 from flask import request, jsonify, make_response
 from src.Application.Service.venda_service import VendaService
 
+
 class VendaController:
     @staticmethod
     def create_venda(seller_id):

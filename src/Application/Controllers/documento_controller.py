@@ -2,6 +2,7 @@ from flask import request, jsonify, make_response
 from src.Application.Service.documento_service import DocumentoService
 from src.Application.Service.product_service import ProductService
 
+
 class DocumentoController:
     @staticmethod
     def _check_product_ownership(product_id, seller_id):
